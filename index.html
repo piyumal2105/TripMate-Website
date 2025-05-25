@@ -107,6 +107,14 @@
         width: 100%;
       }
 
+      nav ul li a.active {
+        color: var(--primary-color);
+      }
+
+      nav ul li a.active::after {
+        width: 100%;
+      }
+
       .mobile-nav-toggle {
         display: none;
         background: transparent;
@@ -489,6 +497,21 @@
         transform: translateX(3px);
       }
 
+      .pdf-viewer {
+        margin-top: 1rem;
+        background-color: var(--white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .pdf-viewer iframe {
+        width: 100%;
+        height: 600px;
+        border: none;
+        border-radius: 10px;
+      }
+
       /* Contact Section */
       .contact {
         background-color: var(--dark-color);
@@ -731,6 +754,10 @@
         .section-header h2 {
           font-size: 2rem;
         }
+
+        .pdf-viewer iframe {
+          height: 400px;
+        }
       }
 
       @media screen and (max-width: 576px) {
@@ -745,6 +772,10 @@
         .btn {
           padding: 0.7rem 1.5rem;
           font-size: 0.9rem;
+        }
+
+        .pdf-viewer iframe {
+          height: 300px;
         }
       }
     </style>
@@ -761,7 +792,7 @@
         </button>
         <nav id="nav">
           <ul>
-            <li><a href="#home">Home</a></li>
+            <li><a href="#home" class="active">Home</a></li>
             <li><a href="#domain">Domain</a></li>
             <li><a href="#features">Features</a></li>
             <li><a href="#milestones">Milestones</a></li>
@@ -1015,9 +1046,20 @@
             <div class="document-content">
               <h3>Project Charter</h3>
               <p>Initial project scope definition and objectives</p>
-              <a href="#" class="document-link"
+              <a
+                href="#"
+                class="document-link"
+                onclick="togglePDF('pdf-charter'); return false;"
                 >View Document <i class="fas fa-arrow-right"></i
               ></a>
+              <div class="pdf-viewer" id="pdf-charter" style="display: none">
+                <iframe
+                  src="documents/Proposal Presentation.pptx"
+                  width="100%"
+                  height="600px"
+                  style="border: none; border-radius: 10px"
+                ></iframe>
+              </div>
             </div>
           </li>
           <li class="document-item">
@@ -1029,9 +1071,20 @@
               <p>
                 Comprehensive project proposal including research background
               </p>
-              <a href="#" class="document-link"
+              <a
+                href="#"
+                class="document-link"
+                onclick="togglePDF('pdf-proposal'); return false;"
                 >View Document <i class="fas fa-arrow-right"></i
               ></a>
+              <div class="pdf-viewer" id="pdf-proposal" style="display: none">
+                <iframe
+                  src="docs/proposal_document.pdf"
+                  width="100%"
+                  height="600px"
+                  style="border: none; border-radius: 10px"
+                ></iframe>
+              </div>
             </div>
           </li>
           <li class="document-item">
@@ -1041,9 +1094,20 @@
             <div class="document-content">
               <h3>Check List Documents</h3>
               <p>Project requirements verification and compliance checklist</p>
-              <a href="#" class="document-link"
+              <a
+                href="#"
+                class="document-link"
+                onclick="togglePDF('pdf-checklist'); return false;"
                 >View Document <i class="fas fa-arrow-right"></i
               ></a>
+              <div class="pdf-viewer" id="pdf-checklist" style="display: none">
+                <iframe
+                  src="docs/checklist_documents.pdf"
+                  width="100%"
+                  height="600px"
+                  style="border: none; border-radius: 10px"
+                ></iframe>
+              </div>
             </div>
           </li>
           <li class="document-item">
@@ -1053,9 +1117,24 @@
             <div class="document-content">
               <h3>Proposal Presentation</h3>
               <p>Slides outlining the project proposal and objectives</p>
-              <a href="#" class="document-link"
+              <a
+                href="#"
+                class="document-link"
+                onclick="togglePDF('pdf-proposal-presentation'); return false;"
                 >View Slides <i class="fas fa-arrow-right"></i
               ></a>
+              <div
+                class="pdf-viewer"
+                id="pdf-proposal-presentation"
+                style="display: none"
+              >
+                <iframe
+                  src="documents/Proposal Presentation.pdf"
+                  width="100%"
+                  height="600px"
+                  style="border: none; border-radius: 10px"
+                ></iframe>
+              </div>
             </div>
           </li>
           <li class="document-item">
@@ -1065,9 +1144,20 @@
             <div class="document-content">
               <h3>Progress Presentation-1</h3>
               <p>First progress update slides for project milestones</p>
-              <a href="#" class="document-link"
+              <a
+                href="#"
+                class="document-link"
+                onclick="togglePDF('pdf-progress-1'); return false;"
                 >View Slides <i class="fas fa-arrow-right"></i
               ></a>
+              <div class="pdf-viewer" id="pdf-progress-1" style="display: none">
+                <iframe
+                  src="documents/PP1 Presentation.pdf"
+                  width="100%"
+                  height="600px"
+                  style="border: none; border-radius: 10px"
+                ></iframe>
+              </div>
             </div>
           </li>
           <li class="document-item">
@@ -1077,9 +1167,20 @@
             <div class="document-content">
               <h3>Progress Presentation-2</h3>
               <p>Second progress update slides for project milestones</p>
-              <a href="#" class="document-link"
+              <a
+                href="#"
+                class="document-link"
+                onclick="togglePDF('pdf-progress-2'); return false;"
                 >View Slides <i class="fas fa-arrow-right"></i
               ></a>
+              <div class="pdf-viewer" id="pdf-progress-2" style="display: none">
+                <iframe
+                  src="documents/PP2 Presentation.pdf"
+                  width="100%"
+                  height="600px"
+                  style="border: none; border-radius: 10px"
+                ></iframe>
+              </div>
             </div>
           </li>
           <li class="document-item">
@@ -1089,9 +1190,24 @@
             <div class="document-content">
               <h3>Final Presentation</h3>
               <p>Final project presentation summarizing outcomes</p>
-              <a href="#" class="document-link"
+              <a
+                href="#"
+                class="document-link"
+                onclick="togglePDF('pdf-final-presentation'); return false;"
                 >View Slides <i class="fas fa-arrow-right"></i
               ></a>
+              <div
+                class="pdf-viewer"
+                id="pdf-final-presentation"
+                style="display: none"
+              >
+                <iframe
+                  src="docs/final_presentation.pdf"
+                  width="100%"
+                  height="600px"
+                  style="border: none; border-radius: 10px"
+                ></iframe>
+              </div>
             </div>
           </li>
           <li class="document-item">
@@ -1103,9 +1219,24 @@
               <p>
                 Complete project documentation including implementation details
               </p>
-              <a href="#" class="document-link"
+              <a
+                href="#"
+                class="document-link"
+                onclick="togglePDF('pdf-final-documentation'); return false;"
                 >View Document <i class="fas fa-arrow-right"></i
               ></a>
+              <div
+                class="pdf-viewer"
+                id="pdf-final-documentation"
+                style="display: none"
+              >
+                <iframe
+                  src="docs/final_documentation.pdf"
+                  width="100%"
+                  height="600px"
+                  style="border: none; border-radius: 10px"
+                ></iframe>
+              </div>
             </div>
           </li>
         </ul>
@@ -1348,8 +1479,8 @@
         </div>
         <div class="footer-bottom">
           <p>
-            &copy; 2025 TripMate - All Rights Reserved | Research Project IT4010
-            - SLIIT | 24-25J-289
+            © 2025 TripMate - All Rights Reserved | Research Project IT4010 -
+            SLIIT | 24-25J-289
           </p>
         </div>
       </div>
@@ -1365,11 +1496,20 @@
         nav.classList.toggle("active");
       });
 
-      // Smooth Scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      // Smooth Scrolling and Active Link Highlight
+      document.querySelectorAll("nav ul li a").forEach((anchor) => {
         anchor.addEventListener("click", function (e) {
           e.preventDefault();
 
+          // Remove active class from all links
+          document
+            .querySelectorAll("nav ul li a")
+            .forEach((link) => link.classList.remove("active"));
+
+          // Add active class to the clicked link
+          this.classList.add("active");
+
+          // Smooth scroll to the target section
           document.querySelector(this.getAttribute("href")).scrollIntoView({
             behavior: "smooth",
           });
@@ -1390,6 +1530,16 @@
           header.style.boxShadow = "0 2px 15px rgba(0, 0, 0, 0.1)";
         }
       });
+
+      // PDF Viewer Toggle
+      function togglePDF(viewerId) {
+        const viewer = document.getElementById(viewerId);
+        if (viewer.style.display === "none" || viewer.style.display === "") {
+          viewer.style.display = "block";
+        } else {
+          viewer.style.display = "none";
+        }
+      }
     </script>
   </body>
 </html>
