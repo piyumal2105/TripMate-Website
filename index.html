@@ -124,6 +124,49 @@
         cursor: pointer;
       }
 
+      /* Search Form */
+      .search-container {
+        display: flex;
+        align-items: center;
+        margin-left: 1.5rem;
+      }
+
+      .search-form {
+        display: flex;
+        position: relative;
+      }
+
+      .search-input {
+        padding: 0.5rem 1rem;
+        border: 1px solid #ddd;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        width: 180px;
+        transition: width 0.3s, box-shadow 0.3s;
+      }
+
+      .search-input:focus {
+        width: 220px;
+        outline: none;
+        box-shadow: 0 0 5px rgba(4, 120, 167, 0.3);
+        border-color: var(--primary-color);
+      }
+
+      .search-button {
+        background-color: var(--primary-color);
+        border: none;
+        color: white;
+        border-radius: 20px;
+        padding: 0.5rem 1rem;
+        margin-left: 0.5rem;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+
+      .search-button:hover {
+        background-color: var(--secondary-color);
+      }
+
       /* Hero Section */
       .hero {
         height: 80vh;
@@ -263,6 +306,59 @@
         margin-bottom: 1rem;
       }
 
+      /* Research Gap, Literature Survey, and Objectives Sections */
+      .research-section {
+        background-color: var(--white);
+        border-radius: 10px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      }
+
+      .research-section h3 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-bottom: 1rem;
+        position: relative;
+        padding-bottom: 0.5rem;
+      }
+
+      .research-section h3::after {
+        content: "";
+        position: absolute;
+        width: 40px;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--accent-color);
+      }
+
+      .research-section p {
+        color: var(--dark-color);
+        margin-bottom: 1rem;
+        line-height: 1.7;
+      }
+
+      .objectives-list {
+        list-style: none;
+        margin-top: 1rem;
+      }
+
+      .objectives-list li {
+        position: relative;
+        padding-left: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .objectives-list li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: var(--accent-color);
+        font-weight: bold;
+      }
+
       /* Features Section */
       .features {
         background-color: var(--white);
@@ -298,6 +394,47 @@
         color: var(--primary-color);
         margin-bottom: 1rem;
         font-size: 1.4rem;
+      }
+
+      /* Technologies Section */
+      .technologies {
+        background-color: var(--light-color);
+      }
+
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .tech-card {
+        background-color: var(--white);
+        border-radius: 10px;
+        padding: 2rem;
+        text-align: center;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .tech-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .tech-icon {
+        font-size: 3rem;
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .tech-card h3 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+      }
+
+      .tech-card p {
+        color: var(--dark-color);
       }
 
       /* Milestones Section */
@@ -406,6 +543,84 @@
         color: var(--dark-color);
         font-size: 0.9rem;
         opacity: 0.8;
+        margin-bottom: 1rem;
+      }
+
+      .supervisor-section {
+        margin-top: 3rem;
+      }
+
+      .supervisor-section h3 {
+        color: var(--primary-color);
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .supervisors-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .supervisor-card {
+        background-color: var(--white);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .supervisor-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .supervisor-img {
+        height: 400px;
+        overflow: hidden;
+      }
+
+      .supervisor-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s;
+      }
+
+      .supervisor-card:hover .supervisor-img img {
+        transform: scale(1.05);
+      }
+
+      .supervisor-content {
+        padding: 1.5rem;
+        text-align: center;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .supervisor-content h3 {
+        color: var(--primary-color);
+        margin-bottom: 0.5rem;
+        font-size: 1.4rem;
+      }
+
+      .supervisor-role {
+        color: var(--accent-color);
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .supervisor-details {
+        color: var(--dark-color);
+        font-size: 0.9rem;
         margin-bottom: 1rem;
       }
 
@@ -710,56 +925,39 @@
         color: rgba(255, 255, 255, 0.6);
       }
 
+      /* Back to Top Button */
+      .back-to-top {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s;
+        z-index: 999;
+      }
+
+      .back-to-top.visible {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .back-to-top:hover {
+        background-color: var(--accent-color);
+        transform: translateY(-5px);
+      }
+
       /* Responsive Styles */
-      @media screen and (max-width: 992px) {
-        .hero-content h2 {
-          font-size: 2.5rem;
-        }
-      }
-
-      @media screen and (max-width: 768px) {
-        .mobile-nav-toggle {
-          display: block;
-        }
-
-        nav {
-          position: absolute;
-          top: 80px;
-          left: 0;
-          right: 0;
-          background-color: var(--white);
-          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-          padding: 1rem 0;
-          transform: translateY(-150%);
-          transition: transform 0.3s;
-        }
-
-        nav.active {
-          transform: translateY(0);
-        }
-
-        nav ul {
-          flex-direction: column;
-          align-items: center;
-        }
-
-        nav ul li {
-          margin: 0.5rem 0;
-        }
-
-        .hero-content h2 {
-          font-size: 2rem;
-        }
-
-        .section-header h2 {
-          font-size: 2rem;
-        }
-
-        .pdf-viewer iframe {
-          height: 400px;
-        }
-      }
-
       @media screen and (max-width: 576px) {
         .hero-content h2 {
           font-size: 1.8rem;
@@ -795,12 +993,21 @@
             <li><a href="#home" class="active">Home</a></li>
             <li><a href="#domain">Domain</a></li>
             <li><a href="#features">Features</a></li>
+            <li><a href="#technologies">Technologies</a></li>
             <li><a href="#milestones">Milestones</a></li>
             <li><a href="#documents">Documents</a></li>
             <li><a href="#team">Team</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </nav>
+        <div class="search-container">
+          <form class="search-form">
+            <input type="text" placeholder="Search..." class="search-input" />
+            <button type="submit" class="search-button">
+              <i class="fas fa-search"></i>
+            </button>
+          </form>
+        </div>
       </div>
     </header>
 
@@ -879,6 +1086,115 @@
             </div>
           </div>
         </div>
+
+        <br />
+
+        <!-- Literature Survey Section -->
+        <div class="research-section">
+          <h3>Literature Survey</h3>
+          <p>
+            Our literature survey reveals that while numerous travel
+            applications exist in the market, there are significant gaps in how
+            they address modern travelers' needs. Current research indicates
+            that 85% of travelers depend on personal recommendations from people
+            they know, as highlighted by TripAdvisor studies. Additionally,
+            research by Amadeus found that travel planning causes anxiety for
+            50% of travelers, largely due to information overload and difficulty
+            in finding personalized recommendations.
+          </p>
+          <p>
+            McKinsey & Company's research demonstrates that personalization in
+            travel significantly boosts customer loyalty, yet most existing
+            applications fail to leverage advanced technologies for truly
+            personalized experiences. According to Gartner, experiential
+            technologies like 3D visualization and virtual exploration enhance
+            travel planning satisfaction by up to 40%, yet these features are
+            underutilized in current solutions.
+          </p>
+          <p>
+            Furthermore, studies by Chen et al. (2015) emphasize the importance
+            of context-aware mobile travel guides that integrate real-time
+            information with user preferences, while Kapur (2019) highlights the
+            critical role of mobile technology in enhancing emergency response
+            during travel situations.
+          </p>
+        </div>
+
+        <!-- Research Gap Section -->
+        <div class="research-section">
+          <h3>Research Gap</h3>
+          <p>
+            Despite advances in travel technology, our research reveals several
+            critical gaps in existing travel planning solutions:
+          </p>
+          <p>
+            First, most current applications fail to provide truly personalized
+            recommendations based on user preferences, behavior patterns, and
+            travel history. They often offer generic suggestions rather than
+            leveraging machine learning for predictive, tailored
+            recommendations.
+          </p>
+          <p>
+            Second, there's a significant lack of social integration in travel
+            platforms. While travelers heavily trust recommendations from people
+            they know, most applications don't effectively connect users with
+            like-minded travelers or provide meaningful ways to share and
+            discover experiences through trusted social networks.
+          </p>
+          <p>
+            Third, immersive visualization technologies are underutilized. Few
+            platforms offer interactive 3D models or virtual exploration of
+            destinations, limiting users' ability to experience locations before
+            visiting them.
+          </p>
+          <p>
+            Finally, existing applications typically don't adapt to changing
+            travel circumstances or provide emergency assistance based on
+            real-time location data, leaving travelers without support when
+            plans change unexpectedly or when emergencies arise.
+          </p>
+        </div>
+
+        <!-- Research Objectives Section -->
+        <div class="research-section">
+          <h3>Research Objectives</h3>
+          <p>
+            Our research project aims to address the identified gaps by
+            fulfilling the following objectives:
+          </p>
+          <ul class="objectives-list">
+            <li>
+              Develop an intelligent travel planning system that leverages
+              machine learning algorithms to provide highly personalized
+              recommendations based on user preferences, behavior, and travel
+              history.
+            </li>
+            <li>
+              Create a social connectivity platform that allows users to share
+              travel experiences, connect with like-minded travelers, and
+              discover destinations through trusted networks, including features
+              for predicting travel groups and implementing a gamified challenge
+              system.
+            </li>
+            <li>
+              Design an immersive 3D visualization system that enhances
+              destination exploration through interactive models and maps,
+              integrated with collaborative filtering and sentiment analysis for
+              personalized recommendations.
+            </li>
+            <li>
+              Develop adaptive travel management and emergency service features
+              that provide alternative suggestions when plans change and offer
+              context-aware emergency assistance using real-time location data.
+            </li>
+            <li>
+              Evaluate the effectiveness of the integrated system in enhancing
+              user satisfaction, reducing travel planning anxiety, and improving
+              overall travel experiences through comprehensive user testing and
+              feedback analysis.
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -954,6 +1270,78 @@
               Access context-aware emergency assistance with real-time location
               tracking and customizable descriptions for quick and precise help
               when needed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="section technologies" id="technologies">
+      <div class="container">
+        <div class="section-header">
+          <h2>Technologies</h2>
+          <p>Cutting-edge technologies powering our travel platform</p>
+        </div>
+        <div class="tech-grid">
+          <div class="tech-card">
+            <div class="tech-icon">
+              <i class="fas fa-brain"></i>
+            </div>
+            <h3>Machine Learning</h3>
+            <p>
+              Advanced algorithms analyze user preferences and behavior to
+              provide personalized recommendations and predict travel patterns.
+            </p>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon">
+              <i class="fas fa-cubes"></i>
+            </div>
+            <h3>3D Modeling</h3>
+            <p>
+              Interactive 3D visualizations of landmarks and attractions provide
+              immersive exploration experiences.
+            </p>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon">
+              <i class="fas fa-mobile-alt"></i>
+            </div>
+            <h3>Mobile Development</h3>
+            <p>
+              Cross-platform technologies deliver a seamless experience across
+              all devices with React Native and Firebase.
+            </p>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon">
+              <i class="fas fa-database"></i>
+            </div>
+            <h3>Cloud Computing</h3>
+            <p>
+              Scalable infrastructure ensures real-time data processing and
+              storage with Google Cloud Platform.
+            </p>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon">
+              <i class="fas fa-map-marked-alt"></i>
+            </div>
+            <h3>Location Services</h3>
+            <p>
+              Precision mapping and geolocation APIs for accurate navigation and
+              proximity-based recommendations.
+            </p>
+          </div>
+          <div class="tech-card">
+            <div class="tech-icon">
+              <i class="fas fa-lock"></i>
+            </div>
+            <h3>Data Security</h3>
+            <p>
+              End-to-end encryption and advanced authentication protect user
+              data and privacy.
             </p>
           </div>
         </div>
@@ -1231,7 +1619,7 @@
                 style="display: none"
               >
                 <iframe
-                  src="documents/24-25J-289_ group document .pdf"
+                  src="documents/Final Document.pdf"
                   width="100%"
                   height="600px"
                   style="border: none; border-radius: 10px"
@@ -1250,6 +1638,46 @@
           <h2>Our Team</h2>
           <p>Meet the talented individuals behind TripMate</p>
         </div>
+        <div class="supervisor-section">
+          <div class="supervisors-grid">
+            <div class="supervisor-card">
+              <div class="supervisor-img">
+                <img src="assets/Supervisor.jpeg" alt="Thilini Jayalath" />
+              </div>
+              <div class="supervisor-content">
+                <h3>Ms. Thilini Jayalath</h3>
+                <div class="supervisor-role">Supervisor</div>
+                <div class="supervisor-details">
+                  <p>Department of Computer Science and Software Engineering</p>
+                  <p>SLIIT, Malabe Campus</p>
+                </div>
+                <div class="team-socials">
+                  <a href="mailto:thilini.j@sliit.lk">
+                    <i class="far fa-envelope"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="supervisor-card">
+              <div class="supervisor-img">
+                <img src="assets/Co-Supervisor.jpg" alt="Shanika Wijesekara" />
+              </div>
+              <div class="supervisor-content">
+                <h3>Dr. Shanika Wijesekara</h3>
+                <div class="supervisor-role">Co-Supervisor</div>
+                <div class="supervisor-details">
+                  <p>Department of InformationTechnology</p>
+                  <p>SLIIT, Malabe Campus</p>
+                </div>
+                <div class="team-socials">
+                  <a href="#"><i class="far fa-envelope"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <br />
         <div class="team-grid">
           <div class="team-card">
             <div class="team-img">
@@ -1259,6 +1687,9 @@
               <h3>Bandara U.M.W</h3>
               <div class="team-role">Tour Planning & Prediction</div>
             </div>
+            <div class="team-socials">
+              <a href="#"><i class="far fa-envelope"></i></a>
+            </div>
           </div>
           <div class="team-card">
             <div class="team-img">
@@ -1267,6 +1698,9 @@
             <div class="team-content">
               <h3>Pathirana A.P.C.E</h3>
               <div class="team-role">Social Connectivity & Challenges</div>
+            </div>
+            <div class="team-socials">
+              <a href="#"><i class="far fa-envelope"></i></a>
             </div>
           </div>
           <div class="team-card">
@@ -1280,6 +1714,9 @@
               <h3>Madhuwantha W.A.S.P</h3>
               <div class="team-role">3D Modeling & Visualization</div>
             </div>
+            <div class="team-socials">
+              <a href="#"><i class="far fa-envelope"></i></a>
+            </div>
           </div>
           <div class="team-card">
             <div class="team-img">
@@ -1291,6 +1728,10 @@
                 Travel Management & Emergency Services
               </div>
             </div>
+            <div class="team-socials">
+              <a href="#"><i class="far fa-envelope"></i></a>
+            </div>
+            <br />
           </div>
         </div>
       </div>
@@ -1406,6 +1847,11 @@
                 >
               </li>
               <li>
+                <a href="#technologies"
+                  ><i class="fas fa-chevron-right"></i> Technologies</a
+                >
+              </li>
+              <li>
                 <a href="#milestones"
                   ><i class="fas fa-chevron-right"></i> Milestones</a
                 >
@@ -1483,6 +1929,11 @@
       </div>
     </footer>
 
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
     <!-- JavaScript -->
     <script>
       // Mobile Navigation Toggle
@@ -1491,6 +1942,73 @@
 
       navToggle.addEventListener("click", () => {
         nav.classList.toggle("active");
+      });
+
+      // Search Functionality
+      const searchForm = document.querySelector(".search-form");
+      searchForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        const searchInput = document.querySelector(".search-input");
+        const searchTerm = searchInput.value.toLowerCase().trim();
+
+        if (searchTerm === "") return;
+
+        // Simple search functionality to scroll to sections based on search terms
+        const sections = {
+          home: "#home",
+          domain: "#domain",
+          features: "#features",
+          technologies: "#technologies",
+          milestones: "#milestones",
+          documents: "#documents",
+          team: "#team",
+          contact: "#contact",
+          travel: "#features",
+          planning: "#features",
+          social: "#features",
+          "3d": "#features",
+          emergency: "#features",
+          research: "#domain",
+          literature: "#domain",
+          objectives: "#domain",
+          methodology: "#domain",
+        };
+
+        // Find the most relevant section based on the search term
+        let targetSection = null;
+
+        // First check for exact matches
+        if (sections[searchTerm]) {
+          targetSection = sections[searchTerm];
+        } else {
+          // Then check for partial matches
+          for (const key in sections) {
+            if (key.includes(searchTerm) || searchTerm.includes(key)) {
+              targetSection = sections[key];
+              break;
+            }
+          }
+        }
+
+        // If a target section is found, scroll to it
+        if (targetSection) {
+          document.querySelector(targetSection).scrollIntoView({
+            behavior: "smooth",
+          });
+
+          // Highlight the section briefly
+          const targetElement = document.querySelector(targetSection);
+          targetElement.style.animation = "highlight 2s";
+
+          setTimeout(() => {
+            targetElement.style.animation = "";
+          }, 2000);
+        } else {
+          alert("No matching content found for: " + searchTerm);
+        }
+
+        // Clear the search input
+        searchInput.value = "";
       });
 
       // Smooth Scrolling and Active Link Highlight
@@ -1518,6 +2036,27 @@
         });
       });
 
+      // Back to Top Button Functionality
+      const backToTopButton = document.getElementById("backToTop");
+
+      // Show/hide back to top button based on scroll position
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 300) {
+          backToTopButton.classList.add("visible");
+        } else {
+          backToTopButton.classList.remove("visible");
+        }
+      });
+
+      // Scroll to top when clicked
+      backToTopButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth",
+        });
+      });
+
       // Scroll Animations
       window.addEventListener("scroll", () => {
         const header = document.querySelector("header");
@@ -1526,6 +2065,26 @@
         } else {
           header.style.boxShadow = "0 2px 15px rgba(0, 0, 0, 0.1)";
         }
+
+        // Add active class to nav links based on scroll position
+        const sections = document.querySelectorAll("section");
+        let currentSection = "";
+
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+
+          if (scrollY >= sectionTop - 300) {
+            currentSection = section.getAttribute("id");
+          }
+        });
+
+        document.querySelectorAll("nav ul li a").forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${currentSection}`) {
+            link.classList.add("active");
+          }
+        });
       });
 
       // PDF Viewer Toggle
@@ -1537,6 +2096,17 @@
           viewer.style.display = "none";
         }
       }
+
+      // Add animation styles for search highlighting
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes highlight {
+          0% { background-color: rgba(4, 120, 167, 0.2); }
+          70% { background-color: rgba(4, 120, 167, 0.2); }
+          100% { background-color: transparent; }
+        }
+      `;
+      document.head.appendChild(style);
     </script>
   </body>
 </html>
